@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form action="/" method="post">
+    <label for="username">
+        Username:
+        <input type="text" name="username" id="username" value= '{{ username }}'' /> 
+    </label>
+    <label for="password">
+        Password:
+        <input type="password" name="password"/>
+    </label>
+    <label for="retype_pw">
+        Re-enter Password:
+        <input type="password" name="retype_pw"/>
+    </label>
+    <label for="email">
+        E-mail (optional):
+        <input type="text" name="email" id="email" value= '{{ email }}'' />
+    </label>
+    <input type="submit" value="Signup"/>
+</form>
+
+
+
+
+
+
+{% if error %}
+  <p class=error>{{ error }} </p>
+{% endif %}
+{% endblock %}
