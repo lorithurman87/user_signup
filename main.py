@@ -45,15 +45,18 @@ def validate_user():
 
     if email == "": 
         return verified_user(username)
+    if " " in email:
+        error = "Please enter a valid email"
+        return (has_an_error(username, email) + error)
     if "@" in email and "." in email:
         if len(email) <= 20 and len(email) > 2:
             return verified_user(username)
         else: 
             error = "Please enter a valid email"
-            return redirect("/?error=" + error)
+            return (has_an_error(username, email) + error)
     else: 
         error = "Please enter a valid email"
-        return redirect("/?error=" + error)
+        return (has_an_error(username, email) + error)
         
 
 
