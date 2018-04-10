@@ -6,7 +6,7 @@
 <form action="/" method="post">
     <label for="username">
         Username:
-        <input type="text" name="username" id="username" value= '{{ username }}'' /> 
+        <input type="text" name="username" id="username" value= '{{ username }}' /> 
     </label>
     <label for="password">
         Password:
@@ -18,7 +18,7 @@
     </label>
     <label for="email">
         E-mail (optional):
-        <input type="text" name="email" id="email" value= '{{ email }}'' />
+        <input type="text" name="email" id="email" value= '{{ email }}' />
     </label>
     <input type="submit" value="Signup"/>
 </form>
@@ -29,6 +29,6 @@
 
 
 {% if error %}
-  <p class=error>{{ error }} </p>
+  <p class='error'>{{ error }} </p>
 {% endif %}
 {% endblock %}

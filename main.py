@@ -27,7 +27,7 @@ def validate_user():
 
     if len(password) > 20 or len(password) < 3:
         error = "Please enter a valid password. Passwords must be between 3-20 characters long and cannot include spaces"
-        return redirect("/?error=" + error)
+        return (has_an_error(username, email) + error)
 
     if " " in username:
         error = "Please enter a valid username. Usernames must be between 3-20 characters long and cannot include spaces"
@@ -35,13 +35,13 @@ def validate_user():
 
     if " " in password:
         error = "Please enter a valid password. Passwords must be between 3-20 characters long and cannot include spaces"
-        return redirect("/?error=" + error)
+        return (has_an_error(username, email) + error)
     
     if retype_pw != password:
         error = "Please enter a valid password. Passwords must match"
         username = request.form["username"]
         email = request.form["email"]
-        return redirect("/?username=" +username + "&email=" + email + "&error=" + error)
+        return (has_an_error(username, email) + error)
 
     if email == "": 
         return verified_user(username)
